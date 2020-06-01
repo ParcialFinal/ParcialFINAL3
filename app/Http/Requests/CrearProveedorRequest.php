@@ -30,3 +30,5 @@ class CrearProveedorRequest extends FormRequest
             'telefono' => 'required|min:5|numeric|int',
             'pagina_web' => 'required|min:3|max:50|url',
         ];
+    }
+}
