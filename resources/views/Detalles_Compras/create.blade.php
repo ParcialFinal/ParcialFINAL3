@@ -10,64 +10,64 @@
 @include('Plantilla.menu')
 <div class="row" style='margin:10px 40px 40px 40px'>
       <div class="col-md-12">
-        <form class="form-horizontal" id="formcomida" name="formcomida" action="{{route('proveedor.store')}}" method="POST">
+        <form class="form-horizontal" id="formcomida" name="formcomida" action="{{route('detalle_compra.store')}}" method="POST">
           @csrf
           <div class="panel panel-warning">
             <div class="panel-heading" style='padding-top:20px'>
-              <h3 class="panel-title"><span class="fa  fa-cutlery" ></span><b> Nuevo Proveedor</b></h3>
+              <h3 class="panel-title"><span class="fa  fa-cutlery" ></span><b> Nuevo Detalle | Compra</b></h3>
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-12">
+              <div class="col-md-12">
                     <div class="form-group">
-                        <label class="col-md-2 control-label"> Nombre:</label>
+                      <label class="col-md-2 control-label" for="exampleFormControlSelect1">Fecha</label>
+                      <div class="col-md-9">
+                      
+                        <select class="form-control" id="compra_id" name="compra_id">
+                        @foreach($compras as $compra)
+                        <option value="{{$compra->id}}">{{$compra->fecha}}</option>
+                        @endforeach  
+                        </select>
+                      
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="col-md-2 control-label" for="exampleFormControlSelect1">Proveedores_Productos</label>
+                      <div class="col-md-9">
+                      
+                        <select class="form-control" id="proveedor_producto_id" name="proveedor_producto_id">
+                        @foreach($proveedores_productos as $proveedor_producto)
+                        <option value="{{$proveedor_producto->id}}">{{$proveedor_producto->id}}</option>
+                        @endforeach  
+                        </select>
+                      
+                      </div>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label class="col-md-2 control-label"> Cantidad:</label>
                         <div class="col-md-9">                                            
                             <div class="input-group">
                                 <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                <input type="text" require id="nombre" name="nombre" class="form-control" placeholder="Nombre del Proveedor" value="{{old('nombre')}}"/>
+                                <input type="number" require id="cantidad" name="cantidad" class="form-control" placeholder="Cantidad" value="{{old('cantidad')}}"/>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                   
+                    <div class="form-group">
+                        <label class="col-md-2 control-label"> Valor Unitario:</label>
+                        <div class="col-md-9">                                            
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                <input type="text" require id="valor_unitario" name="valor_unitario" class="form-control" placeholder="Valor Unitario" value="{{old('valor_unitario')}}"/>
                             </div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label class="col-md-2 control-label"> Direccion:</label>
-                        <div class="col-md-9">                                            
-                            <div class="input-group">
-                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                <input type="text" require id="direccion" name="direccion" class="form-control" placeholder="Digite la Dirección" value="{{old('direccion')}}"/>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-2 control-label"> Contacto:</label>
-                        <div class="col-md-9">                                            
-                            <div class="input-group">
-                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                <input type="text" require id="contacto" name="contacto" class="form-control" placeholder="Contacto del Proveedor" value="{{old('contacto')}}"/>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-2 control-label"> Telefono:</label>
-                        <div class="col-md-9">                                            
-                            <div class="input-group">
-                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                <input type="text" require id="telefono" name="telefono" class="form-control" placeholder="Telefono del Proveedor" value="{{old('telefono')}}"/>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-2 control-label"> Página Web:</label>
-                        <div class="col-md-9">                                            
-                            <div class="input-group">
-                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                <input type="text" require id="pagina_web" name="pagina_web" class="form-control" placeholder="Página Web del Proveedor" value="{{old('pagina_web')}}"/>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
               </div>
@@ -82,7 +82,7 @@
                 </div>
               @endif
               <div class="panel-footer">
-              <a href="{{route('proveedor.index')}}" class="btn btn-danger">Cancelar</a>
+              <a href="{{route('detalle_compra.index')}}" class="btn btn-danger">Cancelar</a>
               <button type="submit" class="btn btn-info pull-right">Registrar</button>
             </div>
           </div>

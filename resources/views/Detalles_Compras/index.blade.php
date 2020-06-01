@@ -29,8 +29,8 @@
                                                 <tr>
                                                     <th width="90" class="text-center">Id</th>
                                                     <th class="text-center">Fecha de la Compra</th>
-                                                    <th class="text-center">Proveedor</th>
                                                     <th class="text-center">Producto</th>
+                                                    <th class="text-center">Proveedor</th>
                                                     <th class="text-center">Cantidad</th>
                                                     <th class="text-center">Valor Unitario</th>
                                                     <th width="200" class="text-center">Acciones</th>
