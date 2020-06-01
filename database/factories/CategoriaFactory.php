@@ -4,9 +4,10 @@
 
 use App\Model;
 use Faker\Generator as Faker;
+use App\Categoria;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(Categoria::class, function (Faker $faker) {
     return [
-        //
+        'nombre' => $faker->randomElement(['Comida','Ropa','Electrodomesticos','Aseo']),
     ];
 });
