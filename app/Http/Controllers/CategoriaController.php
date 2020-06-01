@@ -8,6 +8,7 @@ use App\Http\Requests\CrearCategoriaRequest;
 
 class CategoriaController extends Controller
 {
+    //CATEGORIACONTROLLER
     /**
      * Display a listing of the resource.
      *
